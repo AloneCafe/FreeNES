@@ -12,7 +12,7 @@ private:
 
 public:
 	memory_map() : mem(new uint8_t[memsize]) {}
-	~memory_map() { delete mem; }
+	~memory_map() { delete[] mem; }
 
 	inline uint8_t readByte(uint16_t addr) const {
 		addr %= memsize;
